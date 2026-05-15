@@ -1,0 +1,2236 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)https://nail-saas-bento-1.preview.emergentagent.com/landing.html -->
+<html lang="ru">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nano CRM — Система для мастеров</title>
+  <meta name="description"
+    content="SaaS для частных мастеров: автоматическая запись клиентов через Telegram-бота. Работает 24/7.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* ============== TOKENS ============== */
+    :root {
+      --white: #FFFFFF;
+      --ink: #05021D;
+      --ink-soft: #4A3640;
+      --muted: #8C7884;
+      --line: #ECE3E7;
+      --line-strong: #D9CBD2;
+      --accent: #C0395A;
+      --accent-deep: #9E2A47;
+      --accent-soft: #E85D7E;
+      --pink-tint: #FBEEF3;
+      --pink-tint-2: #F6DFE8;
+      --dark: #05021D;
+      --dark-2: #1F1218;
+      --dark-line: #2E1C25;
+      --code-accent: #F9A8C0;
+      --radius: 24px;
+      --radius-lg: 32px;
+      --radius-sm: 16px;
+    }
+
+    /* ============== RESET ============== */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--white);
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img {
+      max-width: 100%;
+      display: block
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none
+    }
+
+    /* ============== LAYOUT ============== */
+    .wrap {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    @media (max-width:560px) {
+      .wrap {
+        padding: 0 16px
+      }
+    }
+
+    /* ============== NAV ============== */
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 0 8px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 22px;
+      letter-spacing: -.01em;
+    }
+
+    .logo-dot {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 18px;
+      font-style: italic;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-size: 14px;
+      color: var(--ink-soft)
+    }
+
+    .nav-links a {
+      transition: color .2s
+    }
+
+    .nav-links a:hover {
+      color: var(--accent)
+    }
+
+    .nav-cta {
+      font-size: 12px;
+      padding: 12px 20px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: #fff;
+      font-weight: 500;
+      transition: background .2s;
+    }
+
+    .nav-cta:hover {
+      background: var(--accent)
+    }
+
+    @media (max-width:760px) {
+      .nav-links {
+        display: none
+      }
+    }
+
+    /* ============== BENTO GRID BASE ============== */
+    .bento {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+      margin-top: 24px;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 32px;
+      position: relative;
+      overflow: hidden;
+      transition: transform .35s ease, border-color .35s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      border-color: var(--line-strong)
+    }
+
+    .card.dark {
+      background: var(--dark);
+      color: #fff;
+      border-color: var(--dark-line);
+    }
+
+    .card.dark:hover {
+      border-color: var(--accent)
+    }
+
+    .card.accent {
+      background: var(--accent);
+      color: #fff;
+      border-color: transparent;
+    }
+
+    .card.pink {
+      background: var(--pink-tint);
+      border-color: var(--pink-tint-2);
+    }
+
+    /* col spans */
+    .c-3 {
+      grid-column: span 3
+    }
+
+    .c-4 {
+      grid-column: span 4
+    }
+
+    .c-5 {
+      grid-column: span 5
+    }
+
+    .c-6 {
+      grid-column: span 6
+    }
+
+    .c-7 {
+      grid-column: span 7
+    }
+
+    .c-8 {
+      grid-column: span 8
+    }
+
+    .c-12 {
+      grid-column: span 12
+    }
+
+    .r-2 {
+      grid-row: span 2
+    }
+
+    @media (max-width:980px) {
+
+      .c-3,
+      .c-4 {
+        grid-column: span 6
+      }
+
+      .c-5,
+      .c-6,
+      .c-7,
+      .c-8 {
+        grid-column: span 12
+      }
+
+      .r-2 {
+        grid-row: span 1
+      }
+    }
+
+    @media (max-width:560px) {
+
+      .c-3,
+      .c-4,
+      .c-5,
+      .c-6,
+      .c-7,
+      .c-8 {
+        grid-column: span 12
+      }
+
+      .card {
+        padding: 24px
+      }
+
+      .bento {
+        gap: 16px
+      }
+    }
+
+    /* ============== TYPO ============== */
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .eyebrow.on-dark {
+      color: var(--code-accent)
+    }
+
+    .eyebrow.on-dark::before {
+      background: var(--code-accent)
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      letter-spacing: -.02em;
+      line-height: 1.05;
+      margin: 0;
+      color: var(--ink);
+    }
+
+    h3 {
+      font-weight: 500
+    }
+
+    .dark h1,
+    .dark h2,
+    .dark h3 {
+      color: #fff
+    }
+
+    .accent h1,
+    .accent h2,
+    .accent h3 {
+      color: #fff
+    }
+
+    h1 {
+      font-size: clamp(48px, 8vw, 82px);
+      line-height: .98
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--accent);
+      font-weight: 500
+    }
+
+    h2 {
+      font-size: clamp(36px, 5vw, 54px)
+    }
+
+    h3 {
+      font-size: clamp(24px, 3.5vw, 32px)
+    }
+
+    p {
+      margin: 0;
+      color: var(--ink-soft)
+    }
+
+    .dark p,
+    .accent p {
+      color: rgba(255, 255, 255, .78)
+    }
+
+    .lead {
+      font-size: 18px;
+      line-height: 1.55
+    }
+
+    small,
+    .small {
+      font-size: 13px;
+      color: var(--muted)
+    }
+
+    .dark .small {
+      color: rgba(255, 255, 255, .55)
+    }
+
+    /* ============== BUTTONS ============== */
+    .btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 24px;
+      border-radius: 999px;
+      font-weight: 500;
+      font-size: 16px;
+      transition: all .2s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-deep)
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--ink);
+      border-color: var(--line-strong)
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--ink);
+      color: var(--ink)
+    }
+
+    .dark .btn-ghost {
+      color: #fff;
+      border-color: rgba(255, 255, 255, .25)
+    }
+
+    .dark .btn-ghost:hover {
+      border-color: #fff
+    }
+
+    .accent .btn-primary {
+      background: #fff;
+      color: var(--accent)
+    }
+
+    .accent .btn-primary:hover {
+      background: var(--ink);
+      color: #fff
+    }
+
+    .accent .btn-ghost {
+      color: #fff;
+      border-color: rgba(255, 255, 255, .4)
+    }
+
+    .accent .btn-ghost:hover {
+      border-color: #fff;
+      background: rgba(255, 255, 255, .08)
+    }
+
+    .btn .arr {
+      display: inline-block;
+      transition: transform .25s
+    }
+
+    .btn:hover .arr {
+      transform: translateX(4px)
+    }
+
+    /* ============== HERO ============== */
+    .hero {
+      margin-top: 20px
+    }
+
+    .hero-main {
+      padding: 48px 44px 44px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 480px;
+    }
+
+    .badge {
+      align-self: flex-start;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: var(--pink-tint);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 500;
+      border: 1px solid var(--pink-tint-2);
+    }
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(192, 57, 90, .18);
+      animation: pulse 2.2s infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 4px rgba(192, 57, 90, .18)
+      }
+
+      50% {
+        box-shadow: 0 0 0 8px rgba(192, 57, 90, .05)
+      }
+    }
+
+    .hero h1 {
+      margin-top: 32px
+    }
+
+    .hero-sub {
+      font-size: 18px;
+      line-height: 1.55;
+      color: var(--ink-soft);
+      max-width: 560px;
+      margin-top: 24px;
+    }
+
+    .hero-side {
+      display: flex;
+      flex-direction: column;
+      gap: 20px
+    }
+
+    /* mockup placeholder */
+    .mock {
+      background: linear-gradient(180deg, var(--pink-tint) 0%, #fff 100%);
+      border: 1px solid var(--pink-tint-2);
+      border-radius: var(--radius);
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 240px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .phone {
+      width: 180px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 16px 12px;
+      box-shadow: 0 32px 60px -32px rgba(192, 57, 90, .35);
+    }
+
+    .phone-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .phone-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--accent)
+    }
+
+    .phone-title {
+      font-size: 11px;
+      font-weight: 600
+    }
+
+    .phone-sub {
+      font-size: 9px;
+      color: var(--muted)
+    }
+
+    .bubble {
+      margin-top: 12px;
+      padding: 8px 12px;
+      border-radius: 12px;
+      font-size: 10px;
+      line-height: 1.4;
+      max-width: 80%;
+    }
+
+    .bubble.in {
+      background: var(--pink-tint);
+      color: var(--ink)
+    }
+
+    .bubble.out {
+      background: var(--accent);
+      color: #fff;
+      margin-left: auto
+    }
+
+    .feature-pill {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 20px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .feature-pill strong {
+      font-size: 16px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      line-height: 1.4
+    }
+
+    .feature-pill span {
+      font-size: 14px;
+      color: var(--muted);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.5
+    }
+
+    /* ============== SECTION HEAD ============== */
+    .section-head {
+      margin: 140px 0 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .section-head h2 {
+      max-width: 760px
+    }
+
+    .section-head p {
+      max-width: 540px;
+      color: var(--ink-soft);
+      font-size: 16px
+    }
+
+    @media (max-width:560px) {
+      .section-head {
+        margin: 100px 0 48px
+      }
+    }
+
+    /* ============== ICON ============== */
+    .icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 16px;
+      background: var(--pink-tint);
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 20px;
+      font-style: italic;
+    }
+
+    .dark .icon {
+      background: rgba(255, 255, 255, .06);
+      color: var(--code-accent)
+    }
+
+    .accent .icon {
+      background: rgba(255, 255, 255, .18);
+      color: #fff
+    }
+
+    /* ============== PROBLEMS / SOLUTIONS CARD ============== */
+    .card h3 {
+      margin-bottom: 12px
+    }
+
+    .card p {
+      font-size: 16px;
+      line-height: 1.55
+    }
+
+    /* ============== SCREENS ============== */
+    .screen {
+      background: linear-gradient(180deg, var(--pink-tint) 0%, #fff 100%);
+      border: 1px dashed var(--pink-tint-2);
+      border-radius: 20px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 260px;
+      color: var(--accent);
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 20px;
+      position: relative;
+    }
+
+    .screen::before {
+      content: "";
+      position: absolute;
+      inset: 20px;
+      border: 1px solid var(--pink-tint-2);
+      border-radius: 16px;
+      pointer-events: none;
+    }
+
+    .screen-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 8px
+    }
+
+    @media (max-width:560px) {
+      .screen-row {
+        grid-template-columns: 1fr
+      }
+    }
+
+    /* ============== MOBILE SLIDER ============== */
+    .screen-slider {
+      display: none;
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .screen-slider-track {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 20px;
+      scroll-behavior: smooth;
+    }
+
+    .screen-slider-track::-webkit-scrollbar {
+      display: none
+    }
+
+    .screen-slider-item {
+      flex: 0 0 85%;
+      scroll-snap-align: center;
+    }
+
+    .screen-slider-item img {
+      width: 100%;
+      height: auto;
+      border-radius: var(--radius);
+    }
+
+    .slider-nav {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .slider-arrow {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--ink);
+      color: #fff;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      cursor: pointer;
+      transition: all .2s;
+    }
+
+    .slider-arrow:hover {
+      background: var(--accent);
+    }
+
+    .slider-arrow.inactive {
+      background: transparent;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      cursor: default;
+    }
+
+    .slider-arrow.inactive:hover {
+      background: transparent;
+    }
+
+    @media (max-width:560px) {
+      .screen-slider {
+        display: block
+      }
+
+      .bento.screen-bento {
+        display: none
+      }
+    }
+
+    /* ============== PRICING ============== */
+    .price-bento {
+      margin-top: 24px
+    }
+
+    .price-feat {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 20px 20px;
+      border-radius: 20px;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    .price-feat .tick {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--pink-tint);
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+
+    .price-feat strong {
+      font-size: 16px;
+      display: block;
+      margin-bottom: 4px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      line-height: 1.2
+    }
+
+    .price-feat span {
+      font-size: 14px;
+      color: var(--muted);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.2
+    }
+
+    .price-card {
+      background: var(--ink);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .price-card::after {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+      top: -100px;
+      right: -100px;
+      opacity: .5;
+    }
+
+    .price-card .eyebrow {
+      color: var(--code-accent)
+    }
+
+    .price-card .eyebrow::before {
+      background: var(--code-accent)
+    }
+
+    .price-old {
+      color: rgba(255, 255, 255, .45);
+      text-decoration: line-through;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(24px, 3.5vw, 32px);
+      font-weight: 500;
+    }
+
+    .price-now {
+      font-family: 'Playfair Display', serif;
+      font-size: 64px;
+      font-weight: 600;
+      line-height: 1;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .price-now small {
+      color: rgba(255, 255, 255, .6);
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 400
+    }
+
+    .price-card .small {
+      color: rgba(255, 255, 255, .55)
+    }
+
+    .price-card .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      align-self: flex-start
+    }
+
+    .price-card .btn-primary:hover {
+      background: #fff;
+      color: var(--ink)
+    }
+
+    /* ============== FINAL CTA ============== */
+    .final {
+      margin-top: 80px;
+      padding: 64px 48px;
+      text-align: center
+    }
+
+    .final h2 {
+      max-width: 780px;
+      margin: 0 auto
+    }
+
+    .final p {
+      max-width: 580px;
+      margin: 20px auto 0;
+      color: rgba(255, 255, 255, .78);
+      font-size: 16px
+    }
+
+    .final .btns {
+      justify-content: center;
+      margin-top: 32px
+    }
+
+    /* ============== README ============== */
+    .readme-divider {
+      margin: 100px 0 0;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: var(--muted);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .readme-divider::before,
+    .readme-divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--line);
+    }
+
+    .readme {
+      margin-top: 32px;
+      background: var(--dark);
+      color: #fff;
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      border: 1px solid var(--dark-line);
+    }
+
+    .readme-head {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 32px
+    }
+
+    .readme-head h2 {
+      color: #fff;
+      font-size: clamp(28px, 3.5vw, 42px)
+    }
+
+    .readme-head p {
+      color: rgba(255, 255, 255, .62);
+      max-width: 600px;
+      font-size: 16px
+    }
+
+    .readme-prompt {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--code-accent);
+    }
+
+    .readme-prompt::before {
+      content: "$ ";
+      color: #fff;
+      opacity: .4
+    }
+
+    .acc {
+      display: flex;
+      flex-direction: column;
+      gap: 12px
+    }
+
+    .acc-item {
+      border: 1px solid var(--dark-line);
+      border-radius: 16px;
+      background: var(--dark-2);
+      overflow: hidden;
+      transition: border-color .25s;
+    }
+
+    .acc-item[open] {
+      border-color: var(--accent)
+    }
+
+    .acc-summary {
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      list-style: none;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      color: #fff;
+    }
+
+    .acc-summary::-webkit-details-marker {
+      display: none
+    }
+
+    .acc-summary .num {
+      color: var(--code-accent);
+      margin-right: 16px;
+      font-weight: 600
+    }
+
+    .acc-summary .plus {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 1px solid var(--dark-line);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: var(--code-accent);
+      transition: transform .25s;
+    }
+
+    .acc-item[open] .plus {
+      transform: rotate(45deg);
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #fff
+    }
+
+    .acc-body {
+      padding: 8px 24px 24px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, .78);
+    }
+
+    .acc-body h5 {
+      font-family: 'Inter', sans-serif;
+      color: var(--code-accent);
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin: 20px 0 8px;
+      font-weight: 600;
+    }
+
+    .acc-body h5:first-child {
+      margin-top: 8px
+    }
+
+    .acc-body code,
+    .acc-body pre {
+      font-family: 'JetBrains Mono', monospace;
+      background: #0B0508;
+      color: var(--code-accent);
+      padding: 4px 8px;
+      border-radius: 8px;
+      font-size: 12px;
+    }
+
+    .acc-body pre {
+      display: block;
+      padding: 16px 20px;
+      border-radius: 12px;
+      white-space: pre;
+      overflow-x: auto;
+      margin: 12px 0;
+      border: 1px solid var(--dark-line);
+      color: #fff;
+      line-height: 1.55;
+    }
+
+    .acc-body pre .com {
+      color: var(--muted)
+    }
+
+    .acc-body pre .key {
+      color: var(--code-accent)
+    }
+
+    .acc-body ul {
+      margin: 8px 0;
+      padding-left: 20px
+    }
+
+    .acc-body li {
+      margin: 4px 0
+    }
+
+    .acc-body li::marker {
+      color: var(--code-accent)
+    }
+
+    @media (max-width:560px) {
+      .readme {
+        padding: 28px 24px;
+        border-radius: 24px
+      }
+    }
+
+    /* ============== FOOTER ============== */
+    footer {
+      margin: 60px 0 40px;
+      padding-top: 32px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    footer a:hover {
+      color: var(--accent)
+    }
+
+    /* ============== ENTRANCE ============== */
+    .fade {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity .7s ease, transform .7s ease
+    }
+
+    .fade.in {
+      opacity: 1;
+      transform: none
+    }
+  </style>
+  <style id="highlight-mengshou-style">
+    .highlight-mengshou-wrap {
+      background: #ff9;
+      cursor: pointer;
+    }
+
+    .highlight-mengshou-wrap.active {
+      background: #ffb;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="wrap">
+
+    <!-- NAV -->
+    <nav class="nav">
+      <div class="logo">
+        <span class="logo-dot">N</span>
+        Nano CRM
+      </div>
+      <div class="nav-links">
+        <a href="https://nail-saas-bento-1.preview.emergentagent.com/landing.html#problems">Проблемы</a>
+        <a href="https://nail-saas-bento-1.preview.emergentagent.com/landing.html#solution">Решение</a>
+        <a href="https://nail-saas-bento-1.preview.emergentagent.com/landing.html#pricing">Цена</a>
+        <a href="https://nail-saas-bento-1.preview.emergentagent.com/landing.html#readme">README</a>
+      </div>
+      <a href="https://t.me/crmnano2" class="nav-cta">Получить лицензию</a>
+    </nav>
+
+    <!-- HERO BENTO -->
+    <section class="bento hero">
+      <div class="card c-8 hero-main fade in">
+        <span class="badge"><span class="badge-dot"></span> Ранний доступ · Скидка 36%</span>
+        <h1>Клиентов больше.<br><em>Рутины меньше.</em></h1>
+        <p class="hero-sub">Продукт для частных мастеров. Автоматизируйте запись клиентов через Telegram-бота. Система
+          работает 24/7, пока вы занимаетесь делом.</p>
+        <div class="btns">
+          <a href="https://t.me/crmnano2" class="btn btn-primary">Получить лицензию <span class="arr">→</span></a>
+          <a href="https://t.me/dinara_master_demo_bot" class="btn btn-ghost">Попробовать демо</a>
+        </div>
+      </div>
+
+      <div class="c-4 hero-side">
+        <div class="card fade in" style="padding:0;overflow:hidden;background:#F5F5F5;border:1px solid var(--line)">
+          <img src="assets/431shots_so.png" alt="Nano CRM Bot интерфейс"
+            style="width:100%;height:100%;object-fit:cover;display:block">
+        </div>
+        <div class="feature-pill fade in">
+          <strong>Работает 24/7</strong>
+          <span>Без скрытых платежей · Прямо в Telegram</span>
+        </div>
+        <div class="feature-pill fade in">
+          <strong>Выделяет среди конкурентов</strong>
+          <span>Удобный сервис привлекает больше клиентов</span>
+        </div>
+        <div class="feature-pill fade in">
+          <strong>Разгружает время</strong>
+          <span>Больше не нужно отвечать на одни и те же вопросы</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEMS -->
+    <div class="section-head" id="problems">
+      <span class="eyebrow">Проблемы</span>
+      <h2>Знакомые проблемы<br>частных мастеров</h2>
+    </div>
+
+    <section class="bento">
+      <div class="card c-6 fade in">
+        <div class="icon">i</div>
+        <h3>Не всегда можете ответить</h3>
+        <p>Заняты процедурой или уже отдыхаете. А клиенты пишут и уходят к тем, кто ответил быстрее.</p>
+      </div>
+      <div class="card c-6 fade in">
+        <div class="icon">ii</div>
+        <h3>Забытые записи</h3>
+        <p>Вы ждёте клиента, а он забыл. Время потеряно, деньги не заработаны.</p>
+      </div>
+      <div class="card c-6 fade in">
+        <div class="icon">iii</div>
+        <h3>Большая конкуренция</h3>
+        <p>В Узбекистане более десятка тысяч частных мастеров. Нужно выделяться, чтобы вас выбирали.</p>
+      </div>
+      <div class="card c-6 fade in">
+        <div class="icon">iv</div>
+        <h3>Рутинные вопросы</h3>
+        <p>Каждый день одно и то же: «Сколько стоит?», «Когда свободно?», «Где адрес?»</p>
+      </div>
+    </section>
+
+    <!-- SOLUTION -->
+    <div class="section-head" id="solution">
+      <span class="eyebrow">Решение</span>
+      <h2>Как Nano&nbsp;CRM<br>решает эти проблемы</h2>
+      <p>Простая система, которая работает на вас круглосуточно.</p>
+    </div>
+
+    <section class="bento">
+      <div class="card accent c-6 r-2 feature fade in">
+        <div class="icon">★</div>
+        <h3 style="color:#fff;font-size:28px">Вся информация в одном месте</h3>
+        <p>Клиенты видят ваши услуги, цены, портфолио и отзывы — всё в одном Telegram-боте, без сайтов и приложений.</p>
+      </div>
+      <div class="card c-3 feature fade in">
+        <div class="icon">⏱</div>
+        <h3>Умная запись</h3>
+        <p>Бот сам предлагает свободное время и записывает клиента.</p>
+      </div>
+      <div class="card c-3 feature fade in">
+        <div class="icon">♡</div>
+        <h3>Авто-напоминания</h3>
+        <p>Клиенты получают напоминания до визита.</p>
+      </div>
+      <div class="card c-3 feature fade in">
+        <div class="icon">▦</div>
+        <h3>Расписание в приложении</h3>
+        <p>Видите все записи, можете переносить и отменять.</p>
+      </div>
+      <div class="card c-3 feature fade in">
+        <div class="icon">⚑</div>
+        <h3>Уведомления о записях</h3>
+        <p>Мгновенно узнаёте о новых записях и изменениях.</p>
+      </div>
+      <div class="card dark c-12 feature fade in"
+        style="display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+        <div style="max-width:560px">
+          <div class="icon">✦</div>
+          <h3 style="color:#fff;font-size:28px">Прямо в Telegram</h3>
+          <p>Не нужно устанавливать отдельное приложение. Клиенту знаком интерфейс — мастеру удобно работать.</p>
+        </div>
+        <a href="https://t.me/crmnano2" class="btn btn-ghost">Связаться с менеджером <span class="arr">→</span></a>
+      </div>
+    </section>
+
+    <!-- BOT SCREENS -->
+    <div class="section-head">
+      <span class="eyebrow">Интерфейс клиента</span>
+      <h3 style="font-size:clamp(24px,3vw,36px)">Как выглядит бот от лица клиента</h3>
+      <p>Клиенты видят ваши услуги, цены и могут записаться самостоятельно.</p>
+    </div>
+    <section class="bento screen-bento">
+      <div class="c-6 fade in" style="display:flex;justify-content:center">
+        <img src="assets/scrn1.png" alt="Интерфейс клиента - скрин 1"
+          style="max-width:400px;width:100%;height:auto;border-radius:var(--radius)">
+      </div>
+      <div class="c-6 fade in" style="display:flex;justify-content:center">
+        <img src="assets/scrn 2.png" alt="Интерфейс клиента - скрин 2"
+          style="max-width:400px;width:100%;height:auto;border-radius:var(--radius)">
+      </div>
+    </section>
+    <div class="screen-slider">
+      <div class="screen-slider-track" id="slider-client">
+        <div class="screen-slider-item">
+          <img src="assets/scrn1.png" alt="Интерфейс клиента - скрин 3">
+        </div>
+        <div class="screen-slider-item">
+          <img src="assets/scrn 2.png" alt="Интерфейс клиента - скрин 4">
+        </div>
+      </div>
+      <div class="slider-nav">
+        <button class="slider-arrow" onclick="scrollSlider('slider-client', -1)">←</button>
+        <button class="slider-arrow" onclick="scrollSlider('slider-client', 1)">→</button>
+      </div>
+    </div>
+
+    <!-- ADMIN SCREENS -->
+    <div class="section-head">
+      <span class="eyebrow">Интерфейс мастера</span>
+      <h3 style="font-size:clamp(24px,3vw,36px)">Как выглядит админ-панель в приложении</h3>
+      <p>Управляйте расписанием, клиентами и записями в одном месте.</p>
+    </div>
+    <section class="bento screen-bento">
+      <div class="c-6 fade in" style="display:flex;justify-content:center">
+        <img src="assets/scrn_3.png" alt="Интерфейс мастера - скрин 1"
+          style="max-width:400px;width:100%;height:auto;border-radius:var(--radius)">
+      </div>
+      <div class="c-6 fade in" style="display:flex;justify-content:center">
+        <img src="assets/scrn_4.png" alt="Интерфейс мастера - скрин 2"
+          style="max-width:400px;width:100%;height:auto;border-radius:var(--radius)">
+      </div>
+    </section>
+    <div class="screen-slider">
+      <div class="screen-slider-track" id="slider-admin">
+        <div class="screen-slider-item">
+          <img src="assets/scrn_3.png" alt="Интерфейс мастера - скрин 1">
+        </div>
+        <div class="screen-slider-item">
+          <img src="assets/scrn_4.png" alt="Интерфейс мастера - скрин 2">
+        </div>
+      </div>
+      <div class="slider-nav">
+        <button class="slider-arrow" onclick="scrollSlider('slider-admin', -1)">←</button>
+        <button class="slider-arrow" onclick="scrollSlider('slider-admin', 1)">→</button>
+      </div>
+    </div>
+
+    <!-- DEMO CTA -->
+    <section class="bento" style="margin-top:60px">
+      <div class="card pink c-12 fade"
+        style="display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">
+        <div>
+          <span class="eyebrow">Демо</span>
+          <h3 style="margin-top:12px">Посмотрите как работает<br>система прямо сейчас</h3>
+          <p style="margin-top:12px">Опробуйте демонстрационного бота в Telegram.</p>
+        </div>
+        <a href="https://t.me/dinara_master_demo_bot" class="btn btn-primary">Попробовать демо <span
+            class="arr">→</span></a>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <div class="section-head" id="pricing">
+      <span class="eyebrow">Тариф</span>
+      <h2>Простая и честная цена</h2>
+      <p>Всё включено. Никаких скрытых платежей.</p>
+    </div>
+
+    <section class="bento price-bento">
+      <div class="c-7 fade" style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <div class="price-feat"><span class="tick">✓</span>
+          <div><strong>Годовая лицензия</strong><span>Никаких подписок и скрытых платежей</span></div>
+        </div>
+        <div class="price-feat"><span class="tick">✓</span>
+          <div><strong>Полный доступ к продукту</strong><span>Все функции без ограничений</span></div>
+        </div>
+        <div class="price-feat"><span class="tick">✓</span>
+          <div><strong>Настройка под ключ</strong><span>Поможем настроить и запустить</span></div>
+        </div>
+        <div class="price-feat"><span class="tick">✓</span>
+          <div><strong>Техподдержка 24/7</strong><span>Всегда на связи в Telegram</span></div>
+        </div>
+        <div class="price-feat"><span class="tick">✓</span>
+          <div><strong>Хостинг включён</strong><span>Не нужно платить за сервер</span></div>
+        </div>
+        <div class="price-feat"><span class="tick">✓</span>
+          <div><strong>Обучающее видео</strong><span>Быстро разберётесь как работать</span></div>
+        </div>
+      </div>
+
+      <div class="c-5 fade">
+        <div class="price-card">
+          <span class="eyebrow">Скидка 36% · Запуск</span>
+          <div style="display:flex;flex-direction:column;gap:0;margin-bottom:16px">
+            <div class="price-old" style="margin-bottom:-12px">800 000 сум</div>
+            <div class="price-now">500 000 <small>сум / 365 дней</small></div>
+          </div>
+          <a href="https://t.me/crmnano2" class="btn btn-primary">Получить лицензию <span class="arr">→</span></a>
+          <p class="small">Скидка действует ограниченное время.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="bento">
+      <div class="card dark c-12 final fade">
+        <span class="eyebrow on-dark" style="justify-content:center">Начните сегодня</span>
+        <h2 style="margin-top:20px">Начните привлекать больше клиентов <em
+            style="color:var(--code-accent);font-style:italic;font-weight:500">уже сегодня</em></h2>
+        <p>Присоединяйтесь к мастерам, которые уже автоматизировали свою работу и увеличили поток клиентов.</p>
+        <div class="btns">
+          <a href="https://t.me/crmnano2" class="btn btn-primary">Получить лицензию <span class="arr">→</span></a>
+          <a href="https://t.me/dinara_master_demo_bot" class="btn btn-ghost">Попробовать демо</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- README -->
+    <div class="readme-divider" id="readme">— Project README —</div>
+
+    <section class="readme fade">
+      <div class="readme-head">
+        <span class="eyebrow on-dark">Documentation</span>
+        <h2>README.md</h2>
+        <p class="readme-prompt">cat ./nano-crm-landing/README.md</p>
+        <p>Полная техническая документация лендинга. Разверните разделы ниже.</p>
+      </div>
+
+      <div class="acc">
+
+        <details class="acc-item">
+          <summary class="acc-summary">
+            <span><span class="num">01</span> Структура файлов и блоков</span>
+            <span class="plus">+</span>
+          </summary>
+          <div class="acc-body">
+            <h5>// File tree</h5>
+            <pre>nano-crm-landing/
+├── <span class="key">landing.html</span>      <span class="com"># единственный файл — HTML + CSS + JS</span>
+└── README.md         <span class="com"># встроен прямо в страницу</span></pre>
+            <h5>// Секции страницы</h5>
+            <ul>
+              <li><code>&lt;nav&gt;</code> — логотип, ссылки, CTA</li>
+              <li><code>.hero</code> — bento 8/4: заголовок + мокап + pill</li>
+              <li><code>#problems</code> — 4 карточки 6/6/6/6</li>
+              <li><code>#solution</code> — bento 6/3/3/3/3/12 (есть accent и dark карточки)</li>
+              <li>Bot screens — 2 плейсхолдера</li>
+              <li>Admin screens — 2 плейсхолдера</li>
+              <li>Demo CTA — pink-карточка</li>
+              <li><code>#pricing</code> — 7/5: фичи + тёмный price card</li>
+              <li>Final CTA — dark карточка</li>
+              <li><code>#readme</code> — текущий блок</li>
+              <li><code>&lt;footer&gt;</code></li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="acc-item">
+          <summary class="acc-summary">
+            <span><span class="num">02</span> Шрифты, цвета, CSS-переменные</span>
+            <span class="plus">+</span>
+          </summary>
+          <div class="acc-body">
+            <h5>// Typography (Google Fonts)</h5>
+            <ul>
+              <li><code>Playfair Display</code> — все заголовки h1–h3, акценты</li>
+              <li><code>Inter</code> — body, UI, кнопки</li>
+              <li><code>JetBrains Mono</code> — README, технические подписи</li>
+            </ul>
+            <h5>// Color tokens</h5>
+            <pre><span class="key">--white</span>:        #FFFFFF;   <span class="com">// единственный фон страницы</span>
+<span class="key">--ink</span>:          #1A1014;   <span class="com">// основной текст</span>
+<span class="key">--ink-soft</span>:     #4A3640;
+<span class="key">--muted</span>:        #8C7884;
+<span class="key">--line</span>:         #ECE3E7;   <span class="com">// границы карточек</span>
+<span class="key">--accent</span>:       #C0395A;   <span class="com">// розово-бордовый акцент</span>
+<span class="key">--accent-deep</span>:  #9E2A47;
+<span class="key">--accent-soft</span>:  #E85D7E;
+<span class="key">--pink-tint</span>:    #FBEEF3;   <span class="com">// заливка accent-карточек</span>
+<span class="key">--dark</span>:         #14090E;   <span class="com">// фон README</span>
+<span class="key">--radius</span>:       24px;</pre>
+          </div>
+        </details>
+
+        <details class="acc-item">
+          <summary class="acc-summary">
+            <span><span class="num">03</span> Описание секций и содержимого</span>
+            <span class="plus">+</span>
+          </summary>
+          <div class="acc-body">
+            <ul>
+              <li><strong>Hero</strong> — крупный заголовок-антиква с курсивным акцентом, badge «Ранний доступ · Скидка
+                36%», CTA + side-карточка с мокапом телефона.</li>
+              <li><strong>Проблемы</strong> — 4 одинаковых блока 2×2 с римскими номерами в иконке.</li>
+              <li><strong>Решение</strong> — 6 фич: одна большая accent-карточка, 4 равных, плюс широкая тёмная плитка с
+                CTA «Открыть демо».</li>
+              <li><strong>Скрины</strong> — два ряда по две плейсхолдер-плитки с надписями «Скрин 1 / Скрин 2».</li>
+              <li><strong>Demo CTA</strong> — pink-карточка с кнопкой «Попробовать демо».</li>
+              <li><strong>Цена</strong> — слева 6 чек-листов в bento-сетке, справа тёмный price card: 800 000 → 500 000
+                сум / 365 дней.</li>
+              <li><strong>Final CTA</strong> — тёмный блок на всю ширину.</li>
+              <li><strong>README</strong> — этот блок: тёмный фон, моноширинный, аккордеон.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="acc-item">
+          <summary class="acc-summary">
+            <span><span class="num">04</span> Воссоздание с нуля</span>
+            <span class="plus">+</span>
+          </summary>
+          <div class="acc-body">
+            <h5>// Зависимости</h5>
+            <ul>
+              <li>Никаких npm-пакетов, бандлеров, UI-фреймворков.</li>
+              <li>Один CDN-вызов — Google Fonts (Playfair Display, Inter, JetBrains Mono).</li>
+            </ul>
+            <h5>// CDN</h5>
+            <pre>&lt;link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&amp;family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"&gt;</pre>
+            <h5>// Запуск локально</h5>
+            <pre><span class="com"># просто открыть в браузере</span>
+open landing.html
+
+<span class="com"># или поднять статикой</span>
+python3 -m http.server 8080</pre>
+            <h5>// Редактирование контента</h5>
+            <ul>
+              <li>Весь текст — внутри тегов <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, <code>.card</code>.
+                Меняется напрямую в HTML.</li>
+              <li>Цены — секция <code>#pricing</code>, блоки <code>.price-old</code> / <code>.price-now</code>.</li>
+              <li>Ссылки на бота: ищите <code>t.me/CrmNanoManager</code> и <code>t.me/dinara_master_demo_bot</code>.
+              </li>
+              <li>Замена скринов: блоки <code>.screen</code> → вставить <code>&lt;img&gt;</code> с реальным макетом.
+              </li>
+              <li>Цвета меняются в одном месте — переменные <code>:root</code>.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="acc-item">
+          <summary class="acc-summary">
+            <span><span class="num">05</span> Применённые техники</span>
+            <span class="plus">+</span>
+          </summary>
+          <div class="acc-body">
+            <ul>
+              <li><strong>Bento Grid</strong> — 12-колоночная сетка через <code>display:grid</code> +
+                <code>grid-template-columns:repeat(12,1fr)</code>. Карточки занимают разное число колонок
+                (<code>.c-3/.c-4/.c-5/.c-6/.c-7/.c-8/.c-12</code>) и при необходимости 2 ряда (<code>.r-2</code>).
+              </li>
+              <li><strong>CSS Grid + Flexbox</strong> — Grid для bento, Flexbox внутри карточек для выравнивания.</li>
+              <li><strong>Responsive breakpoints</strong>:
+                <ul>
+                  <li><code>≤ 980px</code> — карточки 3/4 → 6, остальные → 12</li>
+                  <li><code>≤ 560px</code> — все карточки 12, уменьшен padding и gap</li>
+                </ul>
+              </li>
+              <li><strong>CSS Variables</strong> — единый источник правды для цветов и радиусов.</li>
+              <li><strong>Fluid typography</strong> — <code>clamp()</code> для h1/h2/h3.</li>
+              <li><strong>Микро-анимации</strong> — pulse у badge, translateY у карточек на hover, IntersectionObserver
+                для entrance-фейда.</li>
+              <li><strong>Native accordion</strong> — README на чистых <code>&lt;details&gt;</code> /
+                <code>&lt;summary&gt;</code>, без JS.
+              </li>
+              <li><strong>Контраст без серых заливок</strong> — фон страницы строго белый, глубина создаётся accent /
+                dark / pink-tint карточками и тонкими границами.</li>
+              <li><strong>Доступность</strong> — семантические теги, контраст текста ≥ 4.5:1, фокус-стили браузера
+                сохранены.</li>
+            </ul>
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div>© Nano CRM. Сделано для частных мастеров.</div>
+      <div>
+        <a href="https://t.me/crmnano2">Связаться в Telegram</a>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    // Entrance fade-in on scroll
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade').forEach(el => io.observe(el));
+
+    // Slider navigation
+    function scrollSlider(sliderId, direction) {
+      const slider = document.getElementById(sliderId);
+      const itemWidth = slider.querySelector('.screen-slider-item').offsetWidth;
+      const gap = 20;
+      slider.scrollBy({
+        left: direction * (itemWidth + gap),
+        behavior: 'smooth'
+      });
+
+      setTimeout(() => updateArrows(sliderId), 300);
+    }
+
+    function updateArrows(sliderId) {
+      const slider = document.getElementById(sliderId);
+      const nav = slider.parentElement.querySelector('.slider-nav');
+      const leftArrow = nav.children[0];
+      const rightArrow = nav.children[1];
+
+      const isAtStart = slider.scrollLeft <= 10;
+      const isAtEnd = slider.scrollLeft >= slider.scrollWidth - slider.clientWidth - 10;
+
+      leftArrow.classList.toggle('inactive', isAtStart);
+      rightArrow.classList.toggle('inactive', isAtEnd);
+    }
+
+    // Initialize arrows on load
+    document.addEventListener('DOMContentLoaded', () => {
+      updateArrows('slider-client');
+      updateArrows('slider-admin');
+    });
+  </script>
+  <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'9fa958157cfb3bfa',t:'MTc3ODU4ODA3Ng=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+  <iframe height="1" width="1"
+    style="position: absolute; top: 0px; left: 0px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; visibility: hidden;"
+    src="./Nano CRM — Система для мастеров_files/saved_resource.html"></iframe>
+  <script defer="" src="./Nano CRM — Система для мастеров_files/v8c78df7c7c0f484497ecbca7046644da1771523124516"
+    integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg=="
+    data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;7f7b0fd8732c4326aae4b9d58d5c514a&quot;,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}"
+    crossorigin="anonymous"></script>
+
+
+  <div id="give-freely-root-bcjindcccaagfpapjjmafapmmgkkhgoa" class="give-freely-root"
+    data-extension-id="bcjindcccaagfpapjjmafapmmgkkhgoa" data-extension-name="JSON Formatter" style="display: block;">
+    <template shadowrootmode="open">
+      <style>
+        :host {
+          all: initial;
+        }
+
+        .gf-scroll-remove::-webkit-scrollbar {
+          border-radius-bottom-right: 15px;
+        }
+
+        button {
+          cursor: pointer;
+          transition: transform 0.1s ease;
+        }
+
+        button:active {
+          transform: scale(0.98);
+        }
+
+        .give-freely-close-button:hover {
+          opacity: 0.7;
+        }
+
+        input[type="radio"] {
+          margin-right: 8px;
+        }
+
+        hr {
+          border: none;
+          border-top: 1px solid #e5e5e5;
+          margin: 1em 0;
+        }
+
+        dialog::backdrop {
+          background-color: revert;
+        }
+
+        dialog.backdrop-hidden::backdrop {
+          background-color: transparent;
+        }
+      </style>
+      <div>
+        <div class="gf-app"></div>
+      </div>
+    </template>
+  </div><webhighlights-element-registry elements-count="48"></webhighlights-element-registry>
+  <div id="webhighlights-notificationshldjnlbobkdkghfidgoecgmklcemanhm"></div>
+  <style id="web-highlights-global-style-variables">
+    :root {
+      --wh-slate-50: #f8fafc;
+      --wh-slate-100: #f1f5f9;
+      --wh-slate-200: #e2e8f0;
+      --wh-slate-300: #cbd5e1;
+      --wh-slate-400: #94a3b8;
+      --wh-slate-500: #64748b;
+      --wh-slate-600: #475569;
+      --wh-slate-700: #334155;
+      --wh-slate-800: #1e293b;
+      --wh-slate-900: #0f172a;
+      --wh-slate-950: #020617;
+      --wh-primary-50: rgb(188, 220, 205);
+      --wh-primary-100: rgb(154, 208, 185);
+      --wh-primary-200: rgb(120, 197, 164);
+      --wh-primary-300: rgb(86, 186, 144);
+      --wh-primary-400: rgb(53, 176, 125);
+      --wh-primary-500: rgb(0, 179, 122);
+      --wh-primary-600: hsl(161, 100%, 33%);
+      --wh-primary-700: hsl(161, 100%, 31%);
+      --wh-primary-800: hsl(161, 100%, 29%);
+      --wh-primary-900: hsl(161, 100%, 25%);
+      --wh-primary-950: hsl(161, 100%, 20%);
+      --wh-secondary-50: hsl(218, 22%, 27%);
+      --wh-secondary-100: hsl(218, 22%, 23%);
+      --wh-secondary-200: hsl(218, 22%, 22%);
+      --wh-secondary-300: hsl(218, 22%, 19%);
+      --wh-secondary-400: hsl(218, 22%, 17%);
+      --wh-secondary-500: hsl(218, 22%, 15%);
+      --wh-secondary-600: hsl(218, 22%, 13%);
+      --wh-secondary-700: hsl(218, 22%, 11%);
+      --wh-secondary-800: hsl(218, 22%, 9%);
+      --wh-secondary-900: hsl(218, 22%, 5%);
+      --wh-secondary-950: hsl(218, 22%, 3%);
+      --wh-gray-50: #f9fafb;
+      --wh-gray-100: #f3f4f6;
+      --wh-gray-200: #e5e7eb;
+      --wh-gray-300: #d1d5db;
+      --wh-gray-400: #9ca3af;
+      --wh-gray-500: #6b7280;
+      --wh-gray-600: #4b5563;
+      --wh-gray-700: #374151;
+      --wh-gray-800: #1f2937;
+      --wh-gray-900: #111827;
+      --wh-gray-950: #030712;
+      --wh-zinc-50: #fafafa;
+      --wh-zinc-100: #f4f4f5;
+      --wh-zinc-200: #e4e4e7;
+      --wh-zinc-300: #d4d4d8;
+      --wh-zinc-400: #a1a1aa;
+      --wh-zinc-500: #71717a;
+      --wh-zinc-600: #52525b;
+      --wh-zinc-700: #3f3f46;
+      --wh-zinc-800: #27272a;
+      --wh-zinc-900: #18181b;
+      --wh-zinc-950: #09090b;
+      --wh-neutral-50: #fafafa;
+      --wh-neutral-100: #f5f5f5;
+      --wh-neutral-200: #e5e5e5;
+      --wh-neutral-300: #d4d4d4;
+      --wh-neutral-400: #a3a3a3;
+      --wh-neutral-500: #737373;
+      --wh-neutral-600: #525252;
+      --wh-neutral-700: #404040;
+      --wh-neutral-800: #262626;
+      --wh-neutral-900: #171717;
+      --wh-neutral-950: #0a0a0a;
+      --wh-stone-50: #fafaf9;
+      --wh-stone-100: #f5f5f4;
+      --wh-stone-200: #e7e5e4;
+      --wh-stone-300: #d6d3d1;
+      --wh-stone-400: #a8a29e;
+      --wh-stone-500: #78716c;
+      --wh-stone-600: #57534e;
+      --wh-stone-700: #44403c;
+      --wh-stone-800: #292524;
+      --wh-stone-900: #1c1917;
+      --wh-stone-950: #0c0a09;
+      --wh-red-50: #fef2f2;
+      --wh-red-100: #fee2e2;
+      --wh-red-200: #fecaca;
+      --wh-red-300: #fca5a5;
+      --wh-red-400: #f87171;
+      --wh-red-500: #ef4444;
+      --wh-red-600: #dc2626;
+      --wh-red-700: #b91c1c;
+      --wh-red-800: #991b1b;
+      --wh-red-900: #7f1d1d;
+      --wh-red-950: #450a0a;
+      --wh-orange-50: #fff7ed;
+      --wh-orange-100: #ffedd5;
+      --wh-orange-200: #fed7aa;
+      --wh-orange-300: #fdba74;
+      --wh-orange-400: #fb923c;
+      --wh-orange-500: #f97316;
+      --wh-orange-600: #ea580c;
+      --wh-orange-700: #c2410c;
+      --wh-orange-800: #9a3412;
+      --wh-orange-900: #7c2d12;
+      --wh-orange-950: #431407;
+      --wh-amber-50: #fffbeb;
+      --wh-amber-100: #fef3c7;
+      --wh-amber-200: #fde68a;
+      --wh-amber-300: #fcd34d;
+      --wh-amber-400: #fbbf24;
+      --wh-amber-500: #f59e0b;
+      --wh-amber-600: #d97706;
+      --wh-amber-700: #b45309;
+      --wh-amber-800: #92400e;
+      --wh-amber-900: #78350f;
+      --wh-amber-950: #451a03;
+      --wh-yellow-50: #fefce8;
+      --wh-yellow-100: #fef9c3;
+      --wh-yellow-200: #fef08a;
+      --wh-yellow-300: #fde047;
+      --wh-yellow-400: #facc15;
+      --wh-yellow-500: #eab308;
+      --wh-yellow-600: #ca8a04;
+      --wh-yellow-700: #a16207;
+      --wh-yellow-800: #854d0e;
+      --wh-yellow-900: #713f12;
+      --wh-yellow-950: #422006;
+      --wh-lime-50: #f7fee7;
+      --wh-lime-100: #ecfccb;
+      --wh-lime-200: #d9f99d;
+      --wh-lime-300: #bef264;
+      --wh-lime-400: #a3e635;
+      --wh-lime-500: #84cc16;
+      --wh-lime-600: #65a30d;
+      --wh-lime-700: #4d7c0f;
+      --wh-lime-800: #3f6212;
+      --wh-lime-900: #365314;
+      --wh-lime-950: #1a2e05;
+      --wh-green-50: #f0fdf4;
+      --wh-green-100: #dcfce7;
+      --wh-green-200: #bbf7d0;
+      --wh-green-300: #86efac;
+      --wh-green-400: #4ade80;
+      --wh-green-500: #22c55e;
+      --wh-green-600: #16a34a;
+      --wh-green-700: #15803d;
+      --wh-green-800: #166534;
+      --wh-green-900: #14532d;
+      --wh-green-950: #052e16;
+      --wh-emerald-50: #ecfdf5;
+      --wh-emerald-100: #d1fae5;
+      --wh-emerald-200: #a7f3d0;
+      --wh-emerald-300: #6ee7b7;
+      --wh-emerald-400: #34d399;
+      --wh-emerald-500: #10b981;
+      --wh-emerald-600: #059669;
+      --wh-emerald-700: #047857;
+      --wh-emerald-800: #065f46;
+      --wh-emerald-900: #064e3b;
+      --wh-emerald-950: #022c22;
+      --wh-teal-50: #f0fdfa;
+      --wh-teal-100: #ccfbf1;
+      --wh-teal-200: #99f6e4;
+      --wh-teal-300: #5eead4;
+      --wh-teal-400: #2dd4bf;
+      --wh-teal-500: #14b8a6;
+      --wh-teal-600: #0d9488;
+      --wh-teal-700: #0f766e;
+      --wh-teal-800: #115e59;
+      --wh-teal-900: #134e4a;
+      --wh-teal-950: #042f2e;
+      --wh-cyan-50: #ecfeff;
+      --wh-cyan-100: #cffafe;
+      --wh-cyan-200: #a5f3fc;
+      --wh-cyan-300: #67e8f9;
+      --wh-cyan-400: #22d3ee;
+      --wh-cyan-500: #06b6d4;
+      --wh-cyan-600: #0891b2;
+      --wh-cyan-700: #0e7490;
+      --wh-cyan-800: #155e75;
+      --wh-cyan-900: #164e63;
+      --wh-cyan-950: #083344;
+      --wh-sky-50: #f0f9ff;
+      --wh-sky-100: #e0f2fe;
+      --wh-sky-200: #bae6fd;
+      --wh-sky-300: #7dd3fc;
+      --wh-sky-400: #38bdf8;
+      --wh-sky-500: #0ea5e9;
+      --wh-sky-600: #0284c7;
+      --wh-sky-700: #0369a1;
+      --wh-sky-800: #075985;
+      --wh-sky-900: #0c4a6e;
+      --wh-sky-950: #082f49;
+      --wh-blue-50: #eff6ff;
+      --wh-blue-100: #dbeafe;
+      --wh-blue-200: #bfdbfe;
+      --wh-blue-300: #93c5fd;
+      --wh-blue-400: #60a5fa;
+      --wh-blue-500: #3b82f6;
+      --wh-blue-600: #2563eb;
+      --wh-blue-700: #1d4ed8;
+      --wh-blue-800: #1e40af;
+      --wh-blue-900: #1e3a8a;
+      --wh-blue-950: #172554;
+      --wh-indigo-50: #eef2ff;
+      --wh-indigo-100: #e0e7ff;
+      --wh-indigo-200: #c7d2fe;
+      --wh-indigo-300: #a5b4fc;
+      --wh-indigo-400: #818cf8;
+      --wh-indigo-500: #6366f1;
+      --wh-indigo-600: #4f46e5;
+      --wh-indigo-700: #4338ca;
+      --wh-indigo-800: #3730a3;
+      --wh-indigo-900: #312e81;
+      --wh-indigo-950: #1e1b4b;
+      --wh-violet-50: #f5f3ff;
+      --wh-violet-100: #ede9fe;
+      --wh-violet-200: #ddd6fe;
+      --wh-violet-300: #c4b5fd;
+      --wh-violet-400: #a78bfa;
+      --wh-violet-500: #8b5cf6;
+      --wh-violet-600: #7c3aed;
+      --wh-violet-700: #6d28d9;
+      --wh-violet-800: #5b21b6;
+      --wh-violet-900: #4c1d95;
+      --wh-violet-950: #2e1065;
+      --wh-purple-50: #faf5ff;
+      --wh-purple-100: #f3e8ff;
+      --wh-purple-200: #e9d5ff;
+      --wh-purple-300: #d8b4fe;
+      --wh-purple-400: #c084fc;
+      --wh-purple-500: #a855f7;
+      --wh-purple-600: #9333ea;
+      --wh-purple-700: #7e22ce;
+      --wh-purple-800: #6b21a8;
+      --wh-purple-900: #581c87;
+      --wh-purple-950: #3b0764;
+      --wh-fuchsia-50: #fdf4ff;
+      --wh-fuchsia-100: #fae8ff;
+      --wh-fuchsia-200: #f5d0fe;
+      --wh-fuchsia-300: #f0abfc;
+      --wh-fuchsia-400: #e879f9;
+      --wh-fuchsia-500: #d946ef;
+      --wh-fuchsia-600: #c026d3;
+      --wh-fuchsia-700: #a21caf;
+      --wh-fuchsia-800: #86198f;
+      --wh-fuchsia-900: #701a75;
+      --wh-fuchsia-950: #4a044e;
+      --wh-pink-50: #fdf2f8;
+      --wh-pink-100: #fce7f3;
+      --wh-pink-200: #fbcfe8;
+      --wh-pink-300: #f9a8d4;
+      --wh-pink-400: #f472b6;
+      --wh-pink-500: #ec4899;
+      --wh-pink-600: #db2777;
+      --wh-pink-700: #be185d;
+      --wh-pink-800: #9d174d;
+      --wh-pink-900: #831843;
+      --wh-pink-950: #500724;
+      --wh-rose-50: #fff1f2;
+      --wh-rose-100: #ffe4e6;
+      --wh-rose-200: #fecdd3;
+      --wh-rose-300: #fda4af;
+      --wh-rose-400: #fb7185;
+      --wh-rose-500: #f43f5e;
+      --wh-rose-600: #e11d48;
+      --wh-rose-700: #be123c;
+      --wh-rose-800: #9f1239;
+      --wh-rose-900: #881337;
+      --wh-rose-950: #4c0519;
+      --wh-primary-color: var(--wh-primary-500);
+      --wh-primary-color-hover: #00a16e;
+      --wh-primary-color-transparent: #00aa7424;
+      --wh-primary-color-transparent-light: #00a8730f;
+      --wh-primary-color-transparent-strong: #00a87340;
+      --wh-primary-color-transparent-stronger: hsla(161, 100%, 33%, 0.5);
+      --wh-primary-color-transparent-strongest: hsla(161, 100%, 33%, 0.75);
+      --wh-primary-light: #53e3a6;
+      --wh-primary-dark: #007f4b;
+      --wh-primary-dark-hover: #017444;
+      --wh-primary-shadow: #00b07841;
+      --wh-primary-shadow-2: #00b07870;
+      --wh-primary-border-color: #c8c8c870;
+      --wh-warning-color: #ff5a1f;
+      --wh-warning-color-light: #feecdc;
+      --wh-ai-primary-decimal: 167, 139, 250;
+      --wh-ai-secondary-decimal: 147, 51, 234;
+      --wh-ai-accent-decimal: 244, 114, 182;
+      --wh-ai-primary: rgba(var(--wh-ai-primary-decimal), 1);
+      --wh-ai-secondary: rgba(var(--wh-ai-secondary-decimal), 1);
+      --wh-ai-accent: rgba(var(--wh-ai-accent-decimal), 1);
+      --secondary-color: #3d4455;
+      --secondary-color-hover: #3a4052;
+      --secondary-color-transparent: #3d44556b;
+      --secondary-light: #4c556d;
+      --secondary-dark: #252934;
+      --secondary-dark-hover: #191b22;
+      --secondary-dark-transparent: #2e2d2d46;
+      --highlight-color: #92ffaa;
+      --error-color: #d62d4c;
+      --error-color-light: #fde8e8;
+      --error-info: #14854e;
+      --success-color: #0e9f6e;
+      --success-color-light: #def7ec;
+      --font-color: #2f3237;
+      --font-color-light: #626364;
+      --font-color-dark: #252525;
+      --wh-font-family: 'SF Pro Display', 'Inter', ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+      --font-family: var(--wh-font-family);
+      --wh-link-color: #1d9bf0;
+      --wh-form-active-color: #3b82f6;
+      --wh-accent-blue: #1f6feb;
+      --BREAKPOINT_XS: 575px;
+      --BREAKPOINT_S: 767px;
+      --BREAKPOINT_M: 991px;
+      --BREAKPOINT_L: 1199px;
+      --BREAKPOINT_XL: 1399px;
+      --BREAKPOINT_XXL: 1699px;
+      --wh-danger-color: var(--wh-red-600);
+      --wh-danger-color-hover: var(--wh-red-700);
+      --wh-font-size: 13px;
+      --wh-blockquote-line-height: 1.3;
+      --wh-breakpoint-xs: 575px;
+      --wh-breakpoint-s: 767px;
+      --wh-breakpoint-m: 991px;
+      --wh-breakpoint-l: 1199px;
+      --wh-breakpoint-xl: 1399px;
+      --wh-breakpoint-xxl: 1699px;
+      --wh-font-size-2xs: 10px;
+      --wh-font-size-xs: 11px;
+      --wh-font-size-s: 12px;
+      --wh-font-size-m: 13px;
+      --wh-font-size-l: 14px;
+      --wh-font-size-xl: 16px;
+      --wh-font-size-2xl: 18px;
+      --wh-font-size-3xl: 20px;
+      --wh-font-size-4xl: 24px;
+      --wh-font-size-5xl: 30px;
+      --wh-font-size-6xl: 36px;
+      --wh-spacing-2xs: 2px;
+      --wh-spacing-xs: 4px;
+      --wh-spacing-s: 8px;
+      --wh-spacing-m: 12px;
+      --wh-spacing-l: 16px;
+      --wh-spacing-xl: 24px;
+      --wh-spacing-2xl: 32px;
+      --wh-spacing-3xl: 48px;
+      --wh-spacing-4xl: 64px;
+      --wh-spacing-5xl: 96px;
+      --wh-border-radius-none: 0px;
+      --wh-border-radius-xs: 2px;
+      --wh-border-radius-s: 4px;
+      --wh-border-radius-m: 6px;
+      --wh-border-radius-l: 8px;
+      --wh-border-radius-xl: 12px;
+      --wh-border-radius-2xl: 16px;
+      --wh-border-radius-3xl: 24px;
+      --wh-border-radius-full: 9999px;
+      --wh-font-weight-light: 300;
+      --wh-font-weight-normal: 400;
+      --wh-font-weight-medium: 500;
+      --wh-font-weight-semibold: 600;
+      --wh-font-weight-bold: 700;
+      --wh-font-weight-extrabold: 800;
+      --wh-line-height-tight: 1.25;
+      --wh-line-height-snug: 1.375;
+      --wh-line-height-normal: 1.5;
+      --wh-line-height-relaxed: 1.625;
+      --wh-line-height-loose: 2;
+      --wh-bg-base: var(--wh-secondary-600);
+      --wh-bg-base-hover: var(--wh-secondary-500);
+      --wh-border-base: var(--wh-secondary-200);
+      --wh-border-base-hover: var(--wh-secondary-100);
+      --wh-border-base-strong: var(--wh-secondary-100);
+      --wh-border-base-strong-hover: var(--wh-secondary-50);
+      --wh-bg-base-hover-strong: var(--wh-secondary-300);
+      --wh-bg-back: var(--wh-secondary-700);
+      --wh-bg-back-strong: var(--wh-secondary-800);
+      --wh-bg-back-strong-hover: var(--wh-secondary-900);
+      --wh-bg-back-hover: var(--wh-secondary-600);
+      --wh-bg-back-hover-strong: var(--wh-secondary-800);
+      --wh-border-back: var(--wh-secondary-100);
+      --wh-border-back-strong: var(--wh-secondary-50);
+      --wh-bg-front: var(--wh-secondary-400);
+      --wh-bg-front-strong: var(--wh-secondary-200);
+      --wh-bg-front-strong-hover: var(--wh-secondary-50);
+      --wh-bg-front-hover: var(--wh-secondary-300);
+      --wh-bg-front-hover-strong: var(--wh-secondary-200);
+      --wh-border-front: hsl(227, 20%, 25%);
+      --wh-border-front-strong: hsl(227, 20%, 35%);
+      --wh-border-front-hover: hsl(227, 20%, 55%);
+      --wh-text-stronger: hsl(0, 0%, 95%);
+      --wh-text-strongest: hsl(0, 0%, 100%);
+      --wh-text-strong: hsl(0, 0%, 90%);
+      --wh-text: hsl(0, 0%, 85%);
+      --wh-text-hover: var(--wh-text-strong);
+      --wh-text-light: hsl(0, 0%, 82%);
+      --wh-text-lighter: hsl(0, 0%, 72%);
+      --wh-text-lightest: hsl(0, 0%, 62%);
+      --wh-border-color: hsla(0, 0%, 100%, 0.15);
+      --wh-border-color-strong: hsla(0, 0%, 100%, 0.25);
+      --wh-note-editor-bg-color: hsl(221, 27%, 17%);
+      --wh-note-editor-bg-color-preview: hsl(221, 27%, 15%);
+      --wh-bg-tags: var(--wh-secondary-300);
+      --wh-bg-tags-hover: var(--wh-secondary-200);
+      --wh-syntax-bg-color: rgba(255, 255, 255, 0.05);
+      --wh-fallback-img-color: var(--wh-secondary-600);
+      --wh-bg-disabled: hsl(220, 22%, 18%);
+      --wh-bg-notification-unread: hsla(161, 100%, 20%, 0.15);
+      --wh-bg-notification-unread-hover: hsla(161, 100%, 20%, 0.05);
+      --wh-subtle-gray: rgb(255, 255, 255, 0.1);
+      --wh-shadow: inset 0 0 0.5px 1px hsla(0, 0%, 100%, 0.1),
+        /* 2. shadow ring 👇 */
+        0 0 0 1px hsla(230, 13%, 9%, 0.075),
+        /* 3. multiple soft shadows 👇 */
+        0 0.3px 0.4px hsla(230, 13%, 9%, 0.02),
+        0 0.9px 1.5px hsla(230, 13%, 9%, 0.045),
+        0 3.5px 6px hsla(230, 13%, 9%, 0.09);
+      --wh-shadow-primary: var(--wh-primary-500) 0px 0px 0px 1px inset,
+        var(--wh-primary-500) 0px 0px 1px;
+      --wh-skeleton-bg: var(--wh-secondary-300);
+      --wh-skeleton-bg-hover: var(--wh-secondary-200);
+      --wh-skeleton-bg-strong: var(--wh-secondary-200);
+      --wh-skeleton-bg-strong-hover: var(--wh-secondary-100);
+      --wh-shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+      --wh-shadow-s: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 1px 2px -1px rgba(0, 0, 0, 0.4);
+      --wh-shadow-m: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.4);
+      --wh-shadow-l: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
+      --wh-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+      --wh-shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      --wh-warning-bg: rgba(245, 158, 11, 0.08);
+      --wh-warning-bg-hover: rgba(245, 158, 11, 0.10);
+      --wh-warning-border: rgba(245, 158, 11, 0.2);
+      --wh-warning-text: #f59e0b;
+    }
+  </style>
+  <div id="give-freely-root-hldjnlbobkdkghfidgoecgmklcemanhm" class="give-freely-root"
+    data-extension-id="hldjnlbobkdkghfidgoecgmklcemanhm"
+    data-extension-name="Web Highlights: PDF &amp; Web Highlighter + Notes &amp; AI Summary" style="display: block;">
+    <template shadowrootmode="open">
+      <style>
+        :host {
+          all: initial;
+        }
+
+        .gf-scroll-remove::-webkit-scrollbar {
+          border-radius-bottom-right: 15px;
+        }
+
+        button {
+          cursor: pointer;
+          transition: transform 0.1s ease;
+        }
+
+        button:active {
+          transform: scale(0.98);
+        }
+
+        .give-freely-close-button:hover {
+          opacity: 0.7;
+        }
+
+        input[type="radio"] {
+          margin-right: 8px;
+        }
+
+        hr {
+          border: none;
+          border-top: 1px solid #e5e5e5;
+          margin: 1em 0;
+        }
+
+        dialog::backdrop {
+          background-color: rgba(180, 180, 180, 0.6);
+        }
+
+        dialog.backdrop-hidden::backdrop {
+          background-color: transparent;
+        }
+      </style>
+      <div>
+        <div class="gf-app"></div>
+      </div>
+    </template>
+  </div>
+  <style id="web-highlights-global-styles">
+    webhighlights-sidebar {
+      --wh-font-size: 13.5px;
+    }
+
+    body.web-highlights-animate {
+      transition: all 300ms linear;
+      transition-property: margin-left, margin-right;
+    }
+
+    body.web-highlights-open {
+      margin-left: 400px !important;
+    }
+
+    web-highlight.webhighlights-highlight {
+      background-color: #92ffaa;
+      cursor: pointer;
+      visibility: visible !important;
+    }
+
+    web-highlight.webhighlights-highlight.webhighlight-with-tags,
+    web-highlight.webhighlights-highlight.webhighlight-with-notes {
+      border-bottom: 2.8px solid gray;
+      border-radius: 0px;
+    }
+
+    web-highlight>*:not(webhighlights-popup-toolbox) {
+      background-color: #92ffaa;
+    }
+
+    webhighlights-popup-toolbox.contains-highlight {
+      transform: translate(-63px, -10px);
+      position: fixed;
+    }
+  </style><webhighlights-popup-toolbox><template
+      shadowrootmode="open"><!----><!--?--></template></webhighlights-popup-toolbox><webhighlights-marker><template
+      shadowrootmode="open"><!---->
+      <!--?lit$394682565$-->
+    </template></webhighlights-marker>
+</body><webhighlights-sidebar alignment="left" sidebar-width="400"><template shadowrootmode="open"><!---->
+    <!--?lit$394682565$-->
+    <webhighlights-main-component part="main-component" data-testid="webhighlights-sidebar-MAIN_COMPONENT"
+      style="left: 0px; right: unset;"><template shadowrootmode="open"><!---->
+        <webhighlights-popover data-testid="webhighlights-main-component-POPOVER"><template
+            shadowrootmode="open"><!----><!--?--></template>
+          <!--?lit$394682565$--><!--?-->
+        </webhighlights-popover>
+
+        <!-- Button to toggle side-bar. It hides when animation is active -->
+        <!--?lit$394682565$--><!--?-->
+        <!--?lit$394682565$-->
+      </template></webhighlights-main-component>
+
+    <!--?lit$394682565$--><!--?-->
+  </template></webhighlights-sidebar>
+
+</html>
